@@ -11,7 +11,7 @@ from importData import *
 filepath = 'dataSets\\happy2015.csv'
 
 df = read_from_file(filepath)
-df = df.head(10)
+#df = df.head(10)
 
 
 def plotHistwBins(dataFrame, colName, binSize=None, title='None', xlabel='X-Axis', ylabel='Y-Axis', color='steelblue', label='Label'):
@@ -106,6 +106,22 @@ def barPlotSimple(dataFrame, X=None, Y=None, hue=None, title='None', xlabel='X-A
     plt.tight_layout()
     plt.show()
 
-toPlot = ['Country','Economy (GDP per Capita)','Family','Health (Life Expectancy)','Freedom']
+def piePlot(dataFrame, plotCol, labels, title='None', xloc=1.10, yloc=0.5):
+    df = dataFrame.dropna()
+    plt.pie(df[plotCol], labels=labels)
+    plt.title(title)
+    plt.legend(loc = (xloc, yloc))
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.show()
 
-print(barPlotSimple(df, 'Country', 'Economy (GDP per Capita)', hue='Region'))
+def linePlot(dataFrame, X=None, Y=None,title='None', xlabel='X-Axis', ylabel='Y-Axis', xloc=1.10, yloc=0.5):
+    plt.plot(dataFrame[X], dataFrame[Y])
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.legend(loc = (xloc, yloc))
+    plt.tight_layout()
+    plt.show()
+
+print(linePlot(df,'Happiness Score','Family'))

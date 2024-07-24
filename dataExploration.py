@@ -8,6 +8,7 @@ from sklearn.impute import SimpleImputer, KNNImputer
 from sklearn import datasets
 from importData import *
 
+
 def plotHistwBins(dataFrame, colName, binSize=None, title='None', xlabel='X-Axis', ylabel='Y-Axis', color='blue', label='Label'):
     if (binSize == None):
         plotData = dataFrame[f'{colName}']
@@ -100,5 +101,23 @@ def barPlotSimple(dataFrame, X=None, Y=None, hue=None, title='None', xlabel='X-A
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+def piePlot(dataFrame, plotCol, labels, title='None', xloc=1.10, yloc=0.5):
+    df = dataFrame.dropna()
+    plt.pie(df[plotCol], labels=labels)
+    plt.title(title)
+    plt.legend(loc = (xloc, yloc))
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.show()
+
+def linePlot(dataFrame, X=None, Y=None,title='None', xlabel='X-Axis', ylabel='Y-Axis', xloc=1.10, yloc=0.5):
+    plt.plot(dataFrame[X], dataFrame[Y])
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.legend(loc = (xloc, yloc))
     plt.tight_layout()
     plt.show()

@@ -11,7 +11,8 @@ filepath = 'IR Study Data V5.xlsx'
 url = 'https://en.wikipedia.org/wiki/2020_Summer_Olympics'
 match_term = ''
 
-def read_from_file(filepath, test=0, n=5, col_Names = [],filetype='csv', sheetName = None):
+def read_from_file(filepath, test=0, n=5, col_Names = [], sheetName = None):
+    filetype = filepath.split('.')[1]
     #This will read the csv and display the first 5 rows of the data.
     if (filetype == 'csv'):
         if (col_Names == []):
