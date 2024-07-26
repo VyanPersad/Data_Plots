@@ -7,7 +7,7 @@ import html5lib
 #   lxml
 #   beautifulsoup4 via pip 
 
-filepath = 'IR Study Data V5.xlsx'
+filepath = 'dataSets\sales1.xlsx'
 url = 'https://en.wikipedia.org/wiki/2020_Summer_Olympics'
 match_term = ''
 
