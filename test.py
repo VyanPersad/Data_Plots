@@ -124,4 +124,3 @@ def linePlot(dataFrame, X=None, Y=None,title='None', xlabel='X-Axis', ylabel='Y-
     plt.tight_layout()
     plt.show()
 
-print(linePlot(df,'Happiness Score','Family'))
