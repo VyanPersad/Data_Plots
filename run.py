@@ -1,9 +1,8 @@
 from importData import *
 import html5lib
 
-url ='https://en.wikipedia.org/wiki/List_of_Formula_One_World_Constructors%27_Champions'
+url ='https://en.wikipedia.org/wiki/2024_Summer_Olympics_medal_table'
 
-df = simple_scraper(url=url, table_Num=2)
+df = simple_scraper(url=url, test=1, table_Num=3)
 
-
-write_to_csv(df, 'test')
+#write_to_csv(df, 'test')

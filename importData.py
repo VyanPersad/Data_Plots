@@ -65,5 +65,8 @@ def simple_scraper(url, n=5, test = 0, table_Num = 0, match_term = None):
     
     return dataFrame
 
-def write_to_csv(dataFrame, file_name):
-    return dataFrame.to_csv(f'{file_name}.csv')
+def write_to_csv(dataFrame, destpath, file_name):
+    return dataFrame.to_csv(f'/{destpath}{file_name}.csv', mode = 'a', index=False)
+
+def write_to_xl(dataFrame, destpath, file_name, sheet_name = '1'):
+    return dataFrame.to_excel(f'/{destpath}{file_name}.xlsx', sheet_name=sheet_name, index=False)
