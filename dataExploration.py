@@ -84,6 +84,7 @@ def scatterPlotMatrix(dataFrame, colNames, label='Label'):
 
 def barPlot(dataFrame, index = None, colNames = None, stacked=False, title='None', xlabel='X-Axis', ylabel='Y-Axis', width=10, height=5):
     #colnames is an array of the column names you wish to plot.
+    #the index param gives the x-axis values.
     df = dataFrame.dropna()
     df = df[colNames]
     df.set_index(index).plot.bar(rot=0, fontsize = 11, stacked=stacked, figsize=(width,height))
