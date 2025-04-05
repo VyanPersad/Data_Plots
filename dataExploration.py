@@ -1,11 +1,8 @@
-import cv2
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import missingno as msno
 import seaborn as sns
-from sklearn.impute import SimpleImputer, KNNImputer
-from sklearn import datasets
 from importData import *
 
 
@@ -122,3 +119,12 @@ def linePlot(dataFrame, X=None, Y=None,title='None', xlabel='X-Axis', ylabel='Y-
     plt.legend(loc = (xloc, yloc))
     plt.tight_layout()
     plt.show()
+
+def sumVals(dataFrame, colName, searchTerm, returnCol):
+    sum = dataFrame[dataFrame[colName] == searchTerm][returnCol].sum()
+    return sum
+
+def countVals(dataFrame, colName, searchTerm):
+    count = dataFrame[dataFrame[colName] == searchTerm].count()
+    return count
+

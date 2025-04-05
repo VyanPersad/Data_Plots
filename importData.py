@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import html5lib
 import os
 
 #You may need to install 
