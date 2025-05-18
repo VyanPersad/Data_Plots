@@ -23,7 +23,8 @@ def read_from_file(filepath, test=0, n=5, col_Names = [], sheet = 0):
             elif (test == 1):
                 print(dataFrame.head(n))
         elif (col_Names != []):
-            dataFrame = pd.read_csv(filepath, names=col_Names)
+            dataFrame = pd.read_csv(filepath)
+            dataFrame = dataFrame[col_Names]
             #dataFrame = pd.read_csv(filepath, sep=';')
             #In the abobve line we tell python to use the ; as the spearator.
             if (test == 0):
