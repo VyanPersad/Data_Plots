@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from importData import *
 
-
 def plotHistwBins(dataFrame, colName, binSize=None, title='None', xlabel='X-Axis', ylabel='Y-Axis', color='blue', label='Label'):
     if (binSize == None):
         plotData = dataFrame[f'{colName}']
@@ -17,7 +16,7 @@ def plotHistwBins(dataFrame, colName, binSize=None, title='None', xlabel='X-Axis
         bins = np.arange(plotData.min(), plotData.max(), binSize)
         plotData = plotData.dropna()
         plt.hist(plotData, bins=bins, color=color, label=label)
-        
+    # Bin size determines how the data is grouped together.    
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
